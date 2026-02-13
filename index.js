@@ -2,30 +2,20 @@ const mineflayer = require('mineflayer')
 
 function createBot() {
     const bot = mineflayer.createBot({
-        host: 'play.everyones.run.place', // Yeni verdiğin IP adresi
-        port: 24107,                     // Portun (Eğer bu da değiştiyse panelden kontrol et)
-        username: 'Kivi_Nöbette',        // Botun ismi
-        version: '1.21.11'               // Loglarda görünen doğru sürüm
+        host: 'play.everyones.run.place', // Yeni verdiğin IP
+        port: 24107,                     // Panelindeki Port
+        username: 'Kivi_724',            
+        version: '1.21.1'                // Hataya sebep olan sürüm burada düzeltildi
     })
 
-    bot.on('spawn', () => {
-        console.log('Bot sunucuya girdi! Kivi su an nöbette.');
-    });
+    bot.on('spawn', () => console.log('BOT OYUNDA! Sunucu artık 7/24.'));
 
-    // AFK atılmayı önlemek için zıplama
     setInterval(() => {
-        if (bot.entity) {
-            bot.setControlState('jump', true);
-            setTimeout(() => bot.setControlState('jump', false), 500);
-        }
+        if (bot.entity) bot.setControlState('jump', true), setTimeout(() => bot.setControlState('jump', false), 500);
     }, 60000);
 
-    bot.on('end', () => {
-        console.log('Bağlantı koptu, 10 saniye sonra tekrar denenecek...');
-        setTimeout(createBot, 10000);
-    });
-
-    bot.on('error', (err) => console.log('Hata:', err));
+    bot.on('end', () => setTimeout(createBot, 5000));
+    bot.on('error', (err) => console.log('Hata:', err.message));
 }
 
 createBot();
