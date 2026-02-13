@@ -5,7 +5,7 @@ function createBot() {
         host: 'play.everyones.run.place', // Senin görselindeki IP
         port: 24107,                  // Senin görselindeki Port
         username: 'Kivi_Nöbette',      // Botun oyundaki adı
-        version: '1.20.1'             // Sunucu sürümün (Değilse değiştir)
+        version: '1.21.1'             // Sunucu sürümün (Değilse değiştir)
     })
 
     bot.on('spawn', () => {
