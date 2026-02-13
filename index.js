@@ -2,7 +2,7 @@ const mineflayer = require('mineflayer')
 
 function createBot() {
     const bot = mineflayer.createBot({
-        host: 'everyoneesmp.falix.gg', // Senin görselindeki IP
+        host: 'play.everyones.run.place', // Senin görselindeki IP
         port: 24107,                  // Senin görselindeki Port
         username: 'Kivi_Nöbette',      // Botun oyundaki adı
         version: '1.20.1'             // Sunucu sürümün (Değilse değiştir)
